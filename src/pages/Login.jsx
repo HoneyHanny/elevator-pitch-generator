@@ -47,13 +47,18 @@ const Login = () => {
           <Box align='left'>
             <FormLabel sx={formLabel}>Username</FormLabel>
           </Box>
-          <TextField InputProps={inputProps} />
+          <TextField InputProps={inputProps} name='username' id='username' />
         </Box>
         <Box sx={inputFieldContainer}>
           <Box align='left'>
             <FormLabel sx={formLabel}>Password</FormLabel>
           </Box>
-          <TextField InputProps={inputProps} />
+          <TextField
+            InputProps={inputProps}
+            type='password'
+            name='password'
+            id='username'
+          />
         </Box>
         <Button
           variant='contained'
@@ -72,6 +77,7 @@ const Login = () => {
       <Box sx={{ marginTop: '1rem' }}>
         Don't have an account?{' '}
         <Link
+          to='/register'
           style={{
             color: theme.palette.primary.main,
             textDecoration: 'none',
