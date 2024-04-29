@@ -54,7 +54,6 @@ const Login = () => {
             userSelect: 'none',
             textAlign: 'center',
           }}
-          // className='container'
         >
           <h1
             style={{

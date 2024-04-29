@@ -1,5 +1,4 @@
 import React from 'react';
-import AppBar from '@mui/material/AppBar';
 import useTheme from '@mui/material/styles/useTheme';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
@@ -7,54 +6,41 @@ import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 
+// NOTE(hans): Subject for change (Not final)
+
+// The layout
+/*
+
+  +--------------------------------------------------------+
+  |                     App bar                            |
+  |                                                        |
+  +--------------------------------------------------------+
+  |                                                        |
+  |  +------------------------+     +--------------------+ |
+  |  | Problem Statement      |     |                    | |
+  |  | Generator              |     |                    | |
+  |  |                        |     |                    | |
+  |  |                        |     |     Diagram        | |
+  |  |                        |     |                    | |
+  |  |                        |     |                    | |
+  |  | Generate               |     |                    | |
+  |  +------------------------+     +--------------------+ |
+  |                     Problem Statement                  |
+  +--------------------------------------------------------+
+  |    Problem                                             |
+  |    [] Inneficient waste collection                     |
+  |    [] Limited availability of recycled products        |
+  |    [] Limited access to recycling                      |
+  |                                                        |
+  +--------------------------------------------------------+
+
+*/
+
 const Home = () => {
   var theme = useTheme();
 
   return (
     <>
-      <AppBar
-        position='static'
-        elevation={0}
-        sx={{
-          background: 'transparent',
-          paddingTop: '3rem',
-          paddingLeft: '5rem',
-          paddingRight: '5rem',
-          paddingBottom: '1rem',
-          userSelect: 'none',
-          display: 'flexbox',
-          flexDirection: 'row',
-          justifyContent: 'space-between',
-        }}
-      >
-        <Box>
-          <h2 style={{ color: theme.palette.primary.main }}>ElevateMe</h2>
-        </Box>
-        <Box
-          sx={{
-            alignContent: 'center',
-            alignItems: 'center',
-            display: 'flex',
-            gap: '2rem',
-          }}
-        >
-          <Button
-            variant='contained'
-            sx={{
-              width: '5.5rem',
-              height: '2.5rem',
-              borderRadius: '32px',
-            }}
-          >
-            Home
-          </Button>
-          <Button>Saved</Button>
-          <Button>List</Button>
-          <Button>5-Whys</Button>
-          <Button>HMW</Button>
-          <Button>Log out</Button>
-        </Box>
-      </AppBar>
       <Box
         sx={{
           paddingTop: '3rem',

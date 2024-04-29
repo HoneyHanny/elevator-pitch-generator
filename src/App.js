@@ -5,8 +5,10 @@ import {
   Navigate,
 } from 'react-router-dom';
 import Login from './pages/Login';
-import Home from './pages/Home';
 import Register from './pages/Register';
+import Home from './pages/Home';
+import Saved from './pages/Saved';
+import UserAppbar from './components/UserAppbar';
 import ThemeProvider from '@mui/material/styles/ThemeProvider';
 import createTheme from '@mui/material/styles/createTheme';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -80,9 +82,12 @@ function App() {
       <Router>
         <Routes>
           <Route path='/' element={<Navigate to='login' />} />
-          <Route path='login' element={<Login />} />
-          <Route path='register' element={<Register />} />
-          <Route path='home' element={<Home />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/register' element={<Register />} />
+          <Route path='/user' element={<UserAppbar />}>
+            <Route path='saved' element={<Saved />} />
+            <Route path='home' element={<Home />} />
+          </Route>
         </Routes>
       </Router>
     </ThemeProvider>
