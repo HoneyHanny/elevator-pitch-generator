@@ -5,6 +5,8 @@ import useTheme from '@mui/material/styles/useTheme';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import FormGroup from '@mui/material/FormGroup';
+import CheckCircle from '@mui/icons-material/CheckCircle';
+import CheckCircleOutlined from '@mui/icons-material/CheckCircleOutlined';
 
 const Saved = () => {
   const theme = useTheme();
@@ -41,7 +43,7 @@ const Saved = () => {
         }}
       >
         <h1 style={{ color: theme.palette.primary.main }}>
-          2 Venn diagram list
+          2 Venn Diagram List
         </h1>
       </Box>
       <Box
@@ -59,23 +61,69 @@ const Saved = () => {
           <FormGroup>
             {/* NOTE(hans): Use array.map later */}
             <FormControlLabel
-              control={<Checkbox defaultChecked />}
+              control={
+                <Checkbox
+                  defaultChecked
+                  icon={
+                    <CheckCircleOutlined
+                      sx={{ fill: theme.palette.primary.main }}
+                    />
+                  }
+                  checkedIcon={<CheckCircle />}
+                />
+              }
               label='Inefficient waste collection'
             />
             <FormControlLabel
-              control={<Checkbox />}
+              control={
+                <Checkbox
+                  icon={
+                    <CheckCircleOutlined
+                      sx={{ fill: theme.palette.primary.main }}
+                    />
+                  }
+                  checkedIcon={<CheckCircle />}
+                />
+              }
               label='Limited availability of recycled products'
             />
             <FormControlLabel
-              control={<Checkbox />}
+              control={
+                <Checkbox
+                  icon={
+                    <CheckCircleOutlined
+                      sx={{ fill: theme.palette.primary.main }}
+                    />
+                  }
+                  checkedIcon={<CheckCircle />}
+                />
+              }
               label='Limited access to recycling'
             />
             <FormControlLabel
-              control={<Checkbox />}
+              control={
+                <Checkbox
+                  icon={
+                    <CheckCircleOutlined
+                      sx={{ fill: theme.palette.primary.main }}
+                    />
+                  }
+                  checkedIcon={<CheckCircle />}
+                />
+              }
               label='Accumulation of waste'
             />
             <FormControlLabel
-              control={<Checkbox />}
+              control={
+                <Checkbox
+                  icon={
+                    <CheckCircleOutlined
+                      sx={{ fill: theme.palette.primary.main }}
+                    />
+                  }
+                  checkedIcon={<CheckCircle />}
+                />
+              }
               label='Resource depletion'
             />
           </FormGroup>
@@ -91,7 +139,7 @@ const Saved = () => {
         }}
       >
         <h1 style={{ color: theme.palette.primary.main }}>
-          3 Venn diagram list
+          3 Venn Diagram List
         </h1>
       </Box>
       <Box
@@ -109,23 +157,69 @@ const Saved = () => {
           <FormGroup>
             {/* NOTE(hans): Use array.map later */}
             <FormControlLabel
-              control={<Checkbox defaultChecked />}
+              control={
+                <Checkbox
+                  defaultChecked
+                  icon={
+                    <CheckCircleOutlined
+                      sx={{ fill: theme.palette.primary.main }}
+                    />
+                  }
+                  checkedIcon={<CheckCircle />}
+                />
+              }
               label='Inefficient waste collection'
             />
             <FormControlLabel
-              control={<Checkbox />}
+              control={
+                <Checkbox
+                  icon={
+                    <CheckCircleOutlined
+                      sx={{ fill: theme.palette.primary.main }}
+                    />
+                  }
+                  checkedIcon={<CheckCircle />}
+                />
+              }
               label='Limited availability of recycled products'
             />
             <FormControlLabel
-              control={<Checkbox />}
+              control={
+                <Checkbox
+                  icon={
+                    <CheckCircleOutlined
+                      sx={{ fill: theme.palette.primary.main }}
+                    />
+                  }
+                  checkedIcon={<CheckCircle />}
+                />
+              }
               label='Limited access to recycling'
             />
             <FormControlLabel
-              control={<Checkbox />}
+              control={
+                <Checkbox
+                  icon={
+                    <CheckCircleOutlined
+                      sx={{ fill: theme.palette.primary.main }}
+                    />
+                  }
+                  checkedIcon={<CheckCircle />}
+                />
+              }
               label='Accumulation of waste'
             />
             <FormControlLabel
-              control={<Checkbox />}
+              control={
+                <Checkbox
+                  icon={
+                    <CheckCircleOutlined
+                      sx={{ fill: theme.palette.primary.main }}
+                    />
+                  }
+                  checkedIcon={<CheckCircle />}
+                />
+              }
               label='Resource depletion'
             />
           </FormGroup>

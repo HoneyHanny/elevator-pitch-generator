@@ -8,10 +8,12 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Home from './pages/Home';
 import Saved from './pages/Saved';
+import List from './pages/List';
 import UserAppbar from './components/UserAppbar';
 import ThemeProvider from '@mui/material/styles/ThemeProvider';
 import createTheme from '@mui/material/styles/createTheme';
 import CssBaseline from '@mui/material/CssBaseline';
+import PageNotFound from './pages/PageNotFound';
 
 // This is the theme for the web app
 var theme = createTheme({
@@ -87,7 +89,10 @@ function App() {
           <Route path='/user' element={<UserAppbar />}>
             <Route path='saved' element={<Saved />} />
             <Route path='home' element={<Home />} />
+            <Route path='list' element={<List />} />
+            <Route path='*' element={<PageNotFound />} />
           </Route>
+          <Route path='*' element={<PageNotFound />} />
         </Routes>
       </Router>
     </ThemeProvider>

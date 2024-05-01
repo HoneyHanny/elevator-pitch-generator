@@ -42,7 +42,7 @@ const Login = () => {
       direction='row'
       alignItems='center'
       justifyContent='center'
-      sx={{ minHeight: '100vh' }}
+      minHeight={'100vh'}
     >
       <Grid item xs={11} md={5} xl={5}>
         <Paper
