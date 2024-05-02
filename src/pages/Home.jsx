@@ -17,6 +17,7 @@ import CheckCircleOutlined from '@mui/icons-material/CheckCircleOutlined';
   |                                                        |
   +--------------------------------------------------------+
   |                                                        |
+  |  Left div                       Right div              |
   |  +------------------------+     +--------------------+ |
   |  | Problem Statement      |     |                    | |
   |  | Generator              |     |                    | |
@@ -58,7 +59,7 @@ const Home = () => {
             justifyContent: 'space-between',
           }}
         >
-          {/* left side */}
+          {/* left div */}
           <Box>
             <h1 style={{ color: theme.palette.primary.main }}>
               Problem Statement
@@ -90,7 +91,7 @@ const Home = () => {
               Generate
             </Button>
           </Box>
-          {/* right side */}
+          {/* right div */}
           <Box>
             {/* TODO(hans): Add actual venn diagram */}
             <h1 style={{ color: theme.palette.primary.main }}>Venn Diagram</h1>

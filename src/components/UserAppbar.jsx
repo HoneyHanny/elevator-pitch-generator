@@ -13,10 +13,8 @@ const UserAppbar = () => {
   var currentLink = '';
   const location = useLocation();
   location.pathname.split('/');
-  console.log(location.pathname.split('/'));
   const pathname = location.pathname.split('/').filter((crumb) => crumb !== '');
   currentLink = pathname[pathname.length - 1];
-  const currentPage = currentLink[0].toUpperCase() + currentLink.slice(1);
 
   var theme = useTheme();
   return (
@@ -48,7 +46,9 @@ const UserAppbar = () => {
           }}
         >
           {navs.map((value, index) => {
-            return value === currentPage ? (
+            return !value.localeCompare(currentLink, 'en', {
+              sensitivity: 'base',
+            }) ? (
               <Link key={index} to={currentLink}>
                 <Button
                   variant='contained'
