@@ -39,6 +39,13 @@ import CheckCircleOutlined from '@mui/icons-material/CheckCircleOutlined';
 
 const Home = () => {
   var theme = useTheme();
+  const problemStatements = [
+    'Inneficient waste collection',
+    'Limited availability',
+    'Limited access to recycling',
+    'Accumulation of waste',
+    'Resource depletion',
+  ];
 
   return (
     <>
@@ -123,72 +130,23 @@ const Home = () => {
         </bold>
         {/* NOTE(hans): Use array.map later */}
         <FormGroup>
-          <FormControlLabel
-            control={
-              <Checkbox
-                defaultChecked
-                icon={
-                  <CheckCircleOutlined
-                    sx={{ fill: theme.palette.primary.main }}
-                  />
-                }
-                checkedIcon={<CheckCircle />}
-              />
-            }
-            label='Inefficient waste collection'
-          />
-          <FormControlLabel
-            control={
-              <Checkbox
-                icon={
-                  <CheckCircleOutlined
-                    sx={{ fill: theme.palette.primary.main }}
-                  />
-                }
-                checkedIcon={<CheckCircle />}
-              />
-            }
-            label='Limited availability of recycled products'
-          />
-          <FormControlLabel
-            control={
-              <Checkbox
-                icon={
-                  <CheckCircleOutlined
-                    sx={{ fill: theme.palette.primary.main }}
-                  />
-                }
-                checkedIcon={<CheckCircle />}
-              />
-            }
-            label='Limited access to recycling'
-          />
-          <FormControlLabel
-            control={
-              <Checkbox
-                icon={
-                  <CheckCircleOutlined
-                    sx={{ fill: theme.palette.primary.main }}
-                  />
-                }
-                checkedIcon={<CheckCircle />}
-              />
-            }
-            label='Accumulation of waste'
-          />
-          <FormControlLabel
-            control={
-              <Checkbox
-                icon={
-                  <CheckCircleOutlined
-                    sx={{ fill: theme.palette.primary.main }}
-                  />
-                }
-                checkedIcon={<CheckCircle />}
-              />
-            }
-            label='Resource depletion'
-          />
+          {problemStatements.map((problemStatement, index) => (
+            <FormControlLabel
+              key={index}
+              control={
+                <Checkbox
+                  defaultChecked
+                  icon={
+                    <CheckCircleOutlined
+                      sx={{ fill: theme.palette.primary.main }}
+                    />
+                  }
+                  checkedIcon={<CheckCircle />}
+                />
+              }
+              label={problemStatement}
+            />
+          ))}
         </FormGroup>
       </Box>
     </>
