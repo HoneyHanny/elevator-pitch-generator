@@ -4,6 +4,7 @@ import AppBar from '@mui/material/AppBar';
 import useTheme from '@mui/material/styles/useTheme';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
 
 const UserAppbar = () => {
   const navs = ['Home', 'Saved', 'List', '5-Whys', 'HMW', 'Log out'];
@@ -34,40 +35,45 @@ const UserAppbar = () => {
           justifyContent: 'space-between',
         }}
       >
-        <Box>
-          <h2 style={{ color: theme.palette.primary.main }}>ElevateMe</h2>
-        </Box>
-        <Box
-          sx={{
-            alignContent: 'center',
-            alignItems: 'center',
-            display: 'flex',
-            gap: '2rem',
-          }}
-        >
-          {navs.map((value, index) => {
-            return !value.localeCompare(currentLink, 'en', {
-              sensitivity: 'base',
-            }) ? (
-              <Link key={index} to={currentLink}>
-                <Button
-                  variant='contained'
-                  sx={{
-                    width: '5.5rem',
-                    height: '2.5rem',
-                    borderRadius: '32px',
-                  }}
-                >
-                  {value}
-                </Button>
-              </Link>
-            ) : (
-              <Link key={index} to={links[index]}>
-                <Button>{value}</Button>
-              </Link>
-            );
-          })}
-        </Box>
+        <Grid container xl={12}>
+          <Grid md={6} xl={8}>
+            <Box>
+              <h2 style={{ color: theme.palette.primary.main }}>ElevateMe</h2>
+            </Box>
+          </Grid>
+          <Grid
+            width={'100%'}
+            md={6}
+            xl={4}
+            alignContent='center'
+            alignItems='center'
+            display='flex'
+            gap='2rem'
+          >
+            {navs.map((value, index) => {
+              return !value.localeCompare(currentLink, 'en', {
+                sensitivity: 'base',
+              }) ? (
+                <Link key={index} to={currentLink}>
+                  <Button
+                    variant='contained'
+                    sx={{
+                      width: '5.5rem',
+                      height: '2.5rem',
+                      borderRadius: '32px',
+                    }}
+                  >
+                    {value}
+                  </Button>
+                </Link>
+              ) : (
+                <Link key={index} to={links[index]}>
+                  <Button>{value}</Button>
+                </Link>
+              );
+            })}
+          </Grid>
+        </Grid>
       </AppBar>
 
       {outlet}

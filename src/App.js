@@ -9,11 +9,13 @@ import Register from './pages/Register';
 import Home from './pages/Home';
 import Saved from './pages/Saved';
 import List from './pages/List';
+import PageNotFound from './pages/PageNotFound';
+import FiveWhys from './pages/FiveWhys';
+import HMW from './pages/HMW';
 import UserAppbar from './components/UserAppbar';
 import ThemeProvider from '@mui/material/styles/ThemeProvider';
 import createTheme from '@mui/material/styles/createTheme';
 import CssBaseline from '@mui/material/CssBaseline';
-import PageNotFound from './pages/PageNotFound';
 
 // This is the theme for the web app
 var theme = createTheme({
@@ -90,6 +92,9 @@ function App() {
             <Route path='saved' element={<Saved />} />
             <Route path='home' element={<Home />} />
             <Route path='list' element={<List />} />
+            <Route path='5-whys' element={<FiveWhys />} />
+            <Route path='hmw' element={<HMW />} />
+            {/* <Route path='log-out' element={<Log-out />} /> */}
             <Route path='*' element={<PageNotFound />} />
           </Route>
           <Route path='*' element={<PageNotFound />} />

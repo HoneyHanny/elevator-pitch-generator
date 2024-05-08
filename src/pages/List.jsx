@@ -5,6 +5,7 @@ import ProblemStatementList from '../components/ProblemStatementList';
 import CheckIcon from '@mui/icons-material/Check';
 import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined';
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
+import { Checkbox } from '@mui/material';
 
 /*
   +---------------------------------------------------------------------+
@@ -19,11 +20,18 @@ import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
   | | [] +-4. Accumulation of waste---------------------------------+ | |
   | |                                                           Add   | |
   | +-----------------------------------------------------------------+ |
+  |                                                                     |
+  |                                                                     |
+  |                                                                     |
+  |                                                                     |
+  |                                                                     |
 
 */
 
 const List = () => {
   const theme = useTheme();
+
+  const ranks = [1, 2, 3, 4, 5];
 
   const test = [
     '1. Inneficient waste collection',
@@ -83,6 +91,7 @@ const List = () => {
       </Box>
       <Box
         sx={{
+          marginTop: '64px',
           marginBottom: '48px',
         }}
       >
@@ -127,7 +136,7 @@ const List = () => {
             }}
           >
             <Box>
-              <strong>Problem Statment</strong>
+              <strong>Problem Statement</strong>
             </Box>
             {terms.map((term, index) => (
               <Box key={index}>
@@ -139,8 +148,36 @@ const List = () => {
             </Box>
           </Box>
         </Box>
-        {/* Gray box */}
-        <Box>{/* Add check box and gray bar */}</Box>
+        {/* Gray box part */}
+        <Box>
+          {ranks.map((rank, index) => (
+            <Box
+              key={index}
+              display='flex'
+              marginTop={1}
+              alignItems='center'
+              gap='8px'
+            >
+              <Checkbox sx={{ color: theme.palette.primary.main }} />
+              <Box
+                sx={{
+                  width: '100%',
+                  backgroundColor: 'gray.main',
+                  borderRadius: '32px',
+                  paddingTop: '16px',
+                  paddingBottom: '16px',
+                  paddingRight: '16px',
+                  paddingLeft: '64px',
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                }}
+              >
+                {rank}
+                <DeleteOutlinedIcon sx={{ fill: theme.palette.primary.main }} />
+              </Box>
+            </Box>
+          ))}
+        </Box>
       </Box>
     </Box>
   );

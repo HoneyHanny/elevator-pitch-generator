@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 const PageNotFound = () => {
   const theme = useTheme();
   return (
-    <Box padding={'4rem'} textAlign={'center'}>
+    <Box sx={{ userSelect: 'none' }} padding={'4rem'} textAlign={'center'}>
       <h1
         style={{
           color: theme.palette.primary.main,
