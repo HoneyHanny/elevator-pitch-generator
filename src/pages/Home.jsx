@@ -122,11 +122,11 @@ const Home = () => {
             paddingRight: '10rem',
           }}
         >
-          <bold
+          <strong
             style={{ fontWeight: 'bold', color: 'black', fontSize: '1.2rem' }}
           >
             Problem
-          </bold>
+          </strong>
           <FormGroup>
             {problemStatements.map((problemStatement, index) => (
               <FormControlLabel
