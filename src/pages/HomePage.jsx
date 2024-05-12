@@ -38,7 +38,7 @@ import CheckCircleOutlined from '@mui/icons-material/CheckCircleOutlined';
   +--------------------------------------------------------+
 */
 
-const Home = () => {
+const HomePage = () => {
   var theme = useTheme();
   const problemStatements = [
     'Inneficient waste collection',
@@ -152,4 +152,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomePage;
