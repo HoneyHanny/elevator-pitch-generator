@@ -1,14 +1,9 @@
 import React from "react";
-import { Link, Outlet, useLocation } from "react-router-dom";
 import AppBar from "@mui/material/AppBar";
 import useTheme from "@mui/material/styles/useTheme";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import { Link, Outlet, useLocation } from "react-router-dom";
-import AppBar from "@mui/material/AppBar";
-import useTheme from "@mui/material/styles/useTheme";
-import Button from "@mui/material/Button";
-import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 
 const UserAppbar = () => {
