@@ -14,9 +14,8 @@ import ThemeProvider from "@mui/material/styles/ThemeProvider";
 import createTheme from "@mui/material/styles/createTheme";
 import CssBaseline from "@mui/material/CssBaseline";
 import PageNotFound from "./pages/PageNotFound";
-import Logout from "./pages/Logout";
-
 // This is the theme for the web app
+
 var theme = createTheme({
 	typography: {
 		fontFamily: '"Lexend Deca", "Lexend", sans-serif',
@@ -91,7 +90,6 @@ function App() {
 						<Route path="saved" element={<Saved />} />
 						<Route path="home" element={<Home />} />
 						<Route path="list" element={<List />} />
-						<Route path="logout" element={<Logout />} />
 						<Route path="*" element={<PageNotFound />} />
 					</Route>
 					<Route path="*" element={<PageNotFound />} />
