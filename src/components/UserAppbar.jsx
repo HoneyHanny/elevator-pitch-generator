@@ -4,6 +4,7 @@ import useTheme from "@mui/material/styles/useTheme";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import { Link, Outlet, useLocation } from "react-router-dom";
+
 import Grid from "@mui/material/Grid";
 import useLogout from "./../hooks/useLogout";
 
@@ -11,12 +12,17 @@ const UserAppbar = () => {
 	const navs = ["Home", "Saved", "List", "5-Whys", "HMW", "Log out"];
 	const links = ["home", "saved", "list", "5-whys", "hmw", "log out"];
 
-	var outlet = <Outlet />;
-	var currentLink = "";
-	const location = useLocation();
-	location.pathname.split("/");
-	const pathname = location.pathname.split("/").filter((crumb) => crumb !== "");
-	currentLink = pathname[pathname.length - 1];
+    var outlet = <Outlet />;
+    var currentLink = "";
+    const location = useLocation();
+    location.pathname.split("/");
+    const pathname = location.pathname
+        .split("/")
+        .filter((crumb) => crumb !== "");
+    currentLink = pathname[pathname.length - 1];
+
+    var theme = useTheme();
+
 
 	var theme = useTheme();
 
@@ -78,11 +84,11 @@ const UserAppbar = () => {
 						})}
 					</Grid>
 				</Grid>
-			</AppBar>
 
-			{outlet}
-		</>
-	);
+
+            {outlet}
+        </>
+    );
 };
 
 export default UserAppbar;
