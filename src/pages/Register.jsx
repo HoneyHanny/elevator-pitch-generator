@@ -35,6 +35,7 @@ const Register = () => {
 				password: "",
 				confirmPassword: "",
 			}));
+			return;
 		}
 
 		try {
@@ -45,14 +46,31 @@ const Register = () => {
 			console.log(response);
 
 			if (response.status === 201) {
+				alert("Created successfully!");
 				setUserData({
 					username: "",
 					email: "",
 					password: "",
+					confirmPassword: "",
 				});
 			}
 		} catch (err) {
 			console.error(err);
+			if (err.response.status === 400) {
+				if (err.response.data.username !== undefined) {
+					alert(err.response.data.username[0]);
+					setUserData((prev) => ({
+						...prev,
+						username: "",
+					}));
+				} else {
+					setUserData((prev) => ({
+						...prev,
+						email: "",
+					}));
+					alert(err.response.data.email[0]);
+				}
+			}
 		}
 	};
 
