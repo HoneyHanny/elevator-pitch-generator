@@ -1,8 +1,6 @@
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import React from "react";
-import Papers from "../components/Papers";
-import Button from "@mui/material/Button";
 import VennDiagramList2 from "../components/VennDiagramList2";
 import Footer from "../components/Footer";
 
