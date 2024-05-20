@@ -9,8 +9,8 @@ import Grid from "@mui/material/Grid";
 import useLogout from "./../hooks/useLogout";
 
 const UserAppbar = () => {
-	const navs = ["Home", "Saved", "List", "5-Whys", "HMW", "Log out"];
-	const links = ["home", "saved", "list", "5-whys", "hmw", "log out"];
+    const navs = ["Home", "Saved", "List", "5-Whys", "HMW", "Log out"];
+    const links = ["home", "saved", "list", "5-whys", "hmw", "log out"];
 
     var outlet = <Outlet />;
     var currentLink = "";
@@ -23,68 +23,77 @@ const UserAppbar = () => {
 
     var theme = useTheme();
 
+    var theme = useTheme();
 
-	var theme = useTheme();
+    const { handleLogout } = useLogout();
 
-	const { handleLogout } = useLogout();
-
-	return (
-		<>
-			<AppBar
-				position="static"
-				elevation={0}
-				sx={{
-					background: "transparent",
-					paddingTop: "3rem",
-					paddingLeft: "5rem",
-					paddingRight: "5rem",
-					paddingBottom: "1rem",
-					userSelect: "none",
-					display: "flexbox",
-					flexDirection: "row",
-					justifyContent: "space-between",
-				}}>
-				<Grid container xl={12}>
-					<Grid md={6} xl={8}>
-						<Box>
-							<h2 style={{ color: theme.palette.primary.main }}>ElevateMe</h2>
-						</Box>
-					</Grid>
-					<Grid
-						width={"100%"}
-						md={6}
-						xl={4}
-						alignContent="center"
-						alignItems="center"
-						display="flex"
-						gap="2rem">
-						{navs.map((value, index) => {
-							return !value.localeCompare(currentLink, "en", {
-								sensitivity: "base",
-							}) ? (
-								<Link key={index} to={currentLink}>
-									<Button
-										variant="contained"
-										sx={{
-											width: "5.5rem",
-											height: "2.5rem",
-											borderRadius: "32px",
-										}}>
-										{value}
-									</Button>
-								</Link>
-							) : (
-								<Link
-									key={index}
-									to={value === "Log out" ? "/login" : links[index]}
-									onClick={handleLogout}>
-									<Button>{value}</Button>
-								</Link>
-							);
-						})}
-					</Grid>
-				</Grid>
-
+    return (
+        <>
+            <AppBar
+                position="static"
+                elevation={0}
+                sx={{
+                    background: "transparent",
+                    paddingTop: "3rem",
+                    paddingLeft: "5rem",
+                    paddingRight: "5rem",
+                    paddingBottom: "1rem",
+                    userSelect: "none",
+                    display: "flexbox",
+                    flexDirection: "row",
+                    justifyContent: "space-between",
+                }}
+            >
+                <Grid container xl={12}>
+                    <Grid md={6} xl={8}>
+                        <Box>
+                            <h2 style={{ color: theme.palette.primary.main }}>
+                                ElevateMe
+                            </h2>
+                        </Box>
+                    </Grid>
+                    <Grid
+                        width={"100%"}
+                        md={6}
+                        xl={4}
+                        alignContent="center"
+                        alignItems="center"
+                        display="flex"
+                        gap="2rem"
+                    >
+                        {navs.map((value, index) => {
+                            return !value.localeCompare(currentLink, "en", {
+                                sensitivity: "base",
+                            }) ? (
+                                <Link key={index} to={currentLink}>
+                                    <Button
+                                        variant="contained"
+                                        sx={{
+                                            width: "5.5rem",
+                                            height: "2.5rem",
+                                            borderRadius: "32px",
+                                        }}
+                                    >
+                                        {value}
+                                    </Button>
+                                </Link>
+                            ) : (
+                                <Link
+                                    key={index}
+                                    to={
+                                        value === "Log out"
+                                            ? "/login"
+                                            : links[index]
+                                    }
+                                    onClick={handleLogout}
+                                >
+                                    <Button>{value}</Button>
+                                </Link>
+                            );
+                        })}
+                    </Grid>
+                </Grid>
+            </AppBar>
 
             {outlet}
         </>

@@ -19,6 +19,7 @@ import createTheme from "@mui/material/styles/createTheme";
 import CssBaseline from "@mui/material/CssBaseline";
 import PageNotFound from "./pages/PageNotFound";
 import SavedList from "./pages/SavedList";
+import ProblemStatementList from "./pages/ProblemStatementList";
 
 const paperShadow = [
     "none",
@@ -115,6 +116,10 @@ function App() {
                     <Route path="/user2" element={<Appbar />}>
                         <Route path="venndiagram" element={<VennDiagram />} />
                         <Route path="savedlist" element={<SavedList />} />
+                        <Route
+                            path="problemstatementlist"
+                            element={<ProblemStatementList />}
+                        />
                     </Route>
                     <Route path="*" element={<PageNotFound />} />
                 </Routes>
