@@ -17,8 +17,19 @@ import ThemeProvider from "@mui/material/styles/ThemeProvider";
 import createTheme from "@mui/material/styles/createTheme";
 import CssBaseline from "@mui/material/CssBaseline";
 import PageNotFound from "./pages/PageNotFound";
+import SavedList from "./pages/SavedList";
+
+const paperShadow = [
+    "none",
+    "0px 0px 3px rgba(0, 0, 0, 0.12), 0px 0px 2px rgba(0, 0, 0, 0.10)",
+    "0px 0px 6px rgba(0, 0, 0, 0.12), 0px 0px 4px rgba(0, 0, 0, 0.10)",
+    "0px 0px 20px rgba(0, 0, 0, 0.12), 0px 0px 6px rgba(0, 0, 0, 0.10)",
+];
 
 var theme = createTheme({
+    shadows: {
+        paperShadow: { softShadow: paperShadow },
+    },
     typography: {
         fontFamily: '"Lexend Deca", "Lexend", sans-serif',
         button: {
@@ -43,6 +54,12 @@ var theme = createTheme({
         },
         gray: {
             main: "#DADADA",
+        },
+        grayText: {
+            main: "#8E8E8E",
+        },
+        delete: {
+            main: "#F69797",
         },
     },
 });
@@ -96,6 +113,7 @@ function App() {
                     </Route>
                     <Route path="/user2" element={<Appbar />}>
                         <Route path="venndiagram" element={<VennDiagram />} />
+                        <Route path="savedlist" element={<SavedList />} />
                     </Route>
                     <Route path="*" element={<PageNotFound />} />
                 </Routes>
